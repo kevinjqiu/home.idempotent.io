@@ -1,5 +1,6 @@
 ---
-- name: docker
+- name: raspberrypi
   hosts: rpi
   roles:
-      - docker
+      #- docker
+      - pihole

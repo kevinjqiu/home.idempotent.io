@@ -1,7 +1,11 @@
 ---
 - name: Docker | Install docker
   apt:
-      name: docker.io
-      state: latest
-      update_cache: yes
+    name: docker.io
+    state: latest
+    update_cache: yes
   become: yes
+- name: Docker | Install docker-py
+  apt:
+    name: python-docker
+    state: latest

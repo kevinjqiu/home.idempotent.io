@@ -1,0 +1,8 @@
+---
+- name: Pihole | Sync local names
+  copy:
+    src: local.list
+    dest: /etc/pihole/local.list
+    mode: 0644
+  become: yes
+  notify: Pihole | Restart dnsmasq
