@@ -3,4 +3,5 @@
   hosts: rpi
   roles:
       #- docker
-      - pihole
+      #- pihole
+      - node-exporter

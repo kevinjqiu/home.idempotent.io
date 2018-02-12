@@ -1,0 +1,29 @@
+---
+- name: node-exporter | Add user
+  user:
+    name: node_exporter
+    group: users
+    createhome: no
+    state: present
+- name: node-exporter | Prepare folders
+  file:
+    path: /var/lib/node_exporter
+    state: directory
+    owner: node_exporter
+    group: users
+- name: node-exporter | Install
+  copy:
+    src: node_exporter-{{ node_exporter_version }}.linux-{{ node_exporter_arch }}/node_exporter
+    dest: /usr/bin/node_exporter
+    mode: 0755
+- name: node-exporter | Install config files
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    mode: 0644
+  with_items:
+    - src: sysconfig.node_exporter
+      dest: /etc/node_exporter.conf
+    - src: node_exporter.service
+      dest: /etc/systemd/system/node_exporter.service
+  notify: node-exporter | Restart service
