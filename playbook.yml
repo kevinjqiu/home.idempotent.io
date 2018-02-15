@@ -2,6 +2,9 @@
 - name: raspberrypi
   hosts: rpi
   roles:
-      #- docker
-      #- pihole
-      - node-exporter
+    - role: docker
+      tags: ["docker"]
+    - role: pihole
+      tags: ["pihole"]
+    - role: node-exporter
+      tags: ["node-exporter"]

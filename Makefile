@@ -1,2 +1,2 @@
 run:
-	ansible-playbook -i inventory/inventory playbook.yml --ask-pass --user pi --become -v
+	ansible-playbook -i inventory/inventory playbook.yml --ask-pass --user pi --become -v -t $(TAGS)
