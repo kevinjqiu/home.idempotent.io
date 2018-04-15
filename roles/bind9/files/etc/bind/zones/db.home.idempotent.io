@@ -17,6 +17,6 @@ ns2.home.idempotent.io. IN  A   192.168.0.12
 
 ; 192.168.0.0/16 - A records
 monarch.home.idempotent.io.	IN	A	192.168.200.61
-idaeus.home.idempotent.io   IN  A   192.168.0.11
+idaeus.home.idempotent.io.   IN  A   192.168.0.11
 nivalis.home.idempotent.io. IN  A   192.168.0.12
 opi.home.idempotent.io. IN  A   192.168.200.65
