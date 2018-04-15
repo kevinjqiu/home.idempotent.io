@@ -7,3 +7,20 @@
   with_items:
     - bind9
     - bind9utils
+- name: Bind9 | Copy config files
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    mode: 0644
+  with_items:
+    - src: etc/default/bind9
+      dest: /etc/default/bind9
+    - src: etc/bind/named.conf.options
+      dest: /etc/bind/named.conf.options
+    - src: etc/bind/named.conf.local
+      dest: /etc/bind/named.conf.local
+    - src: etc/bind/zones/db.192.168
+      dest: /etc/bind/zones/db.192.168
+    - src: etc/bind/zones/db.home.idempotent.io
+      dest: /etc/bind/zones/db.home.idempotent.io
+  notify: Bind9 | Restart service

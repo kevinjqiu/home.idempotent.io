@@ -26,4 +26,4 @@
       dest: /etc/node_exporter.conf
     - src: node_exporter.service
       dest: /etc/systemd/system/node_exporter.service
-  notify: node-exporter | Restart service
+  notify: Bind9 | Restart service

@@ -1,0 +1,7 @@
+---
+- name: Bind9 | Restart service
+  systemd:
+    name: bind9.service
+    daemon_reload: yes
+    enabled: yes
+    state: started

@@ -1,0 +1,25 @@
+acl "trusted" {
+    192.168.0.0/24;
+};
+
+options {
+    directory "/var/cache/bind";
+
+    recursion yes;
+    allow-recursion { trusted; };
+    listen-on { 0.0.0.0 port 10053; };
+    allow-transfer { none; };
+
+    forwarders {
+        192.168.0.11 port 53;
+        192.168.0.12 port 53;
+    }
+
+    //========================================================================
+    // If BIND logs error messages about the root key being expired,
+    // you will need to update your keys.  See https://www.isc.org/bind-keys
+    //========================================================================
+    dnssec-validation auto;
+
+    auth-nxdomain no;    # conform to RFC1035
+};
