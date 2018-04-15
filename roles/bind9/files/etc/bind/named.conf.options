@@ -7,13 +7,13 @@ options {
 
     recursion yes;
     allow-recursion { trusted; };
-    listen-on { 0.0.0.0 port 10053; };
+    listen-on port 10053 { any; };
     allow-transfer { none; };
 
     forwarders {
         192.168.0.11 port 53;
         192.168.0.12 port 53;
-    }
+    };
 
     //========================================================================
     // If BIND logs error messages about the root key being expired,

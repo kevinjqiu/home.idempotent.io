@@ -3,10 +3,12 @@
   apt:
     name: "{{ item }}"
     state: latest
-    update_cache: yes
+    update_cache: no
   with_items:
     - bind9
     - bind9utils
+- name: Bind9 | Ensure config folders exist
+  file: path=/etc/bind/zones state=directory
 - name: Bind9 | Copy config files
   copy:
     src: "{{ item.src }}"
