@@ -6,3 +6,10 @@
     mode: 0644
   become: yes
   notify: Pihole | Restart dnsmasq
+- name: Pihole | Configure dnsmasq
+  copy:
+    src: dnsmasq.conf
+    dest: /etc/dnsmasq.conf
+    mode: 0644
+  notify: Pihole | Restart dnsmasq
+  become: yes

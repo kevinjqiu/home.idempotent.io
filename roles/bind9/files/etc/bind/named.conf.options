@@ -7,12 +7,12 @@ options {
 
     recursion yes;
     allow-recursion { trusted; };
-    listen-on port 10053 { any; };
+    listen-on port 53 { any; };
     allow-transfer { none; };
 
     forwarders {
-        192.168.0.11 port 53;
-        192.168.0.12 port 53;
+        192.168.0.11 port 15353;
+        192.168.0.12 port 15353;
     };
 
     //========================================================================

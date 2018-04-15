@@ -2,4 +2,4 @@
 - name: Pihole | Restart dnsmasq
   systemd:
     name: dnsmasq.service
-    state: reloaded
+    state: restarted
