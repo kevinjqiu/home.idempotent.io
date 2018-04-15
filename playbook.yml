@@ -5,6 +5,8 @@
     - role: docker
       tags: ["docker"]
     - role: pihole
-      tags: ["pihole"]
+      tags: ["dns"]
+    - role: bind9
+      tags: ["dns"]
     - role: node-exporter
       tags: ["node-exporter"]

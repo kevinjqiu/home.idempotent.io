@@ -1,0 +1,9 @@
+---
+- name: Bind9 | Install bind9
+  apt:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  with_items:
+    - bind9
+    - bind9utils
