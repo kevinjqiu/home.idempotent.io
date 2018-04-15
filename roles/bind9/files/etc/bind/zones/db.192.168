@@ -13,5 +13,9 @@ $TTL	604800
 
 ; PTR records
 
-65.200	IN	PTR	ns1.home.idempotent.io.
+11.0    IN  PTR ns1.home.idempotent.io.
+12.0    IN  PTR ns2.home.idempotent.io.
 61.200	IN	PTR	monarch.home.idempotent.io.
+11.0    IN  PTR idaeus.home.idempotent.io.
+12.0    IN  PTR nivalis.home.idempotent.io.
+65.200  IN  PTR opi.home.idempotent.io.
