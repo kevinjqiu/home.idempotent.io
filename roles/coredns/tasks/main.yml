@@ -1,0 +1,43 @@
+---
+- name: CoreDNS | Make sure coredns user exists
+  user:
+    name: coredns
+    group: users
+    groups:
+      - sudo
+    state: present
+- name: CoreDNS | Make sure the coredns config folders exist
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: coredns
+    group: users
+  with_items:
+    - /etc/coredns
+    - /etc/coredns/zones
+- name: CoreDNS | Install
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    mode: 0755
+  with_items:
+    - src: "coredns_1.1.1_armv6/coredns"
+      dest: /usr/local/bin/coredns
+    - src: coredns.service
+      dest: /etc/systemd/system/coredns.service
+- name: CoreDNS | Copy config files
+  template:
+    src: Corefile.j2
+    dest: /etc/coredns/Corefile
+    owner: coredns
+    group: users
+- name: CoreDNS | Copy zone files
+  copy:
+    src: zones/
+    dest: /etc/coredns/zones
+- name: CoreDNS | Restart service
+  systemd:
+    name: coredns
+    daemon_reload: yes
+    enabled: yes
+    state: restarted

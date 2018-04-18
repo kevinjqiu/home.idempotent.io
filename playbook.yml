@@ -8,5 +8,7 @@
       tags: ["dns"]
     - role: bind9
       tags: ["dns"]
+    - role: coredns
+      tags: ["coredns"]
     - role: node-exporter
       tags: ["node-exporter"]

@@ -1,0 +1,4 @@
+coredns_bind_port: 25353
+coredns_health_port: 8001
+coredns_prometheus_port: 9153
+coredns_forward: ". 192.168.0.11:15353 192.168.0.12:15353"
