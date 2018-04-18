@@ -1,0 +1,7 @@
+---
+- name: CoreDNS | Restart service
+  systemd:
+    name: coredns
+    daemon_reload: yes
+    enabled: yes
+    state: restarted
