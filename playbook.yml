@@ -9,6 +9,6 @@
     - role: bind9
       tags: ["dns"]
     - role: coredns
-      tags: ["coredns"]
+      tags: ["coredns", "dns"]
     - role: node-exporter
       tags: ["node-exporter"]

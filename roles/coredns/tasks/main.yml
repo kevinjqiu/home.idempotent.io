@@ -25,6 +25,7 @@
       dest: /usr/local/bin/coredns
     - src: coredns.service
       dest: /etc/systemd/system/coredns.service
+  notify: CoreDNS | Restart service
 - name: CoreDNS | Copy config files
   template:
     src: Corefile.j2

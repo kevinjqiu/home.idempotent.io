@@ -2,7 +2,7 @@
 Description=CoreDNS
 
 [Service]
-User=coredns
+User=root
 EnvironmentFile=
 ExecStart=/usr/local/bin/coredns -conf /etc/coredns/Corefile
 

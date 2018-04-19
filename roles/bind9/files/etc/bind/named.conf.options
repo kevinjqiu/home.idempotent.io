@@ -7,7 +7,7 @@ options {
 
     recursion yes;
     allow-recursion { trusted; };
-    listen-on port 53 { any; };
+    listen-on port 35353 { any; };
     allow-transfer { none; };
 
     forwarders {
