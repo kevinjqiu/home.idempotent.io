@@ -17,14 +17,19 @@
     - /etc/coredns/zones
 - name: CoreDNS | Install
   copy:
-    src: "{{ item.src }}"
-    dest: "{{ item.dest }}"
+    src: "coredns_1.1.1_armv6/coredns"
+    dest: /usr/local/bin/coredns
     mode: 0755
-  with_items:
-    - src: "coredns_1.1.1_armv6/coredns"
-      dest: /usr/local/bin/coredns
-    - src: coredns.service
-      dest: /etc/systemd/system/coredns.service
+- name: CoreDNS | Set capabilities
+  capabilities:
+    path: /usr/local/bin/coredns
+    capability: cap_net_bind_service+ep
+    state: present
+- name: CoreDNS | Copy systemd unit file
+  copy:
+    src: coredns.service
+    dest: /etc/systemd/system/coredns.service
+    mode: 0644
   notify: CoreDNS | Restart service
 - name: CoreDNS | Copy config files
   template:
