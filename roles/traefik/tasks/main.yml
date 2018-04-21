@@ -3,7 +3,7 @@
   template:
     src: traefik.toml.j2
     dest: /etc/traefik.toml
-- name: Traefik | Run traefik in container
+- name: Traefik | Run in container
   docker_container:
     name: traefik
     image: traefik:{{ traefik_version }}

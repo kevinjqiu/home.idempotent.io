@@ -1,0 +1,21 @@
+global:
+  scrape_interval: 15s
+  scrape_timeout: 15s
+  evaluation_interval: 1m
+rule_files:
+  - /etc/prometheus/rules/*
+scrape_configs:
+{% for scrape_job in scrape_jobs %}
+  - job_name: {{ scrape_job.name }}
+    static_configs:
+    - targets:
+{% for target in scrape_job.targets %}
+        - {{ target }}
+{% endfor %}
+{% if scrape_job.labels %}
+      labels:
+{% for label in scrape_job.labels %}
+        - {{ label }}
+{% endfor %}
+{% endif %}
+{% endfor %}

@@ -4,3 +4,6 @@
 
 [ingress]
 monarch.srv.qiu.home
+
+[monitoring]
+satellite.srv.qiu.home

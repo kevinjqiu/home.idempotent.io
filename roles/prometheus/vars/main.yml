@@ -1,0 +1,10 @@
+prometheus_version: v2.2.1
+scrape_jobs:
+  - name: node_stats
+    targets:
+      - satellite.srv.qiu.home:9100
+      - monarch.srv.qiu.home:9100
+      - nivalis.srv.qiu.home:9100
+      - idaeus.srv.qiu.home:9100
+      - opi.srv.qiu.home:9100
+    labels: []

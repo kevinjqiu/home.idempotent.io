@@ -18,8 +18,15 @@
   hosts: ingress
   roles:
     - role: docker
-      tags: ["docker"]
     - role: traefik
     - role: node-exporter
+  vars:
+    node_exporter_arch: amd64
+- name: monitoring
+  hosts: monitoring
+  roles:
+    - role: docker
+    - role: node-exporter
+    - role: prometheus
   vars:
     node_exporter_arch: amd64

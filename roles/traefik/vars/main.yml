@@ -16,3 +16,7 @@ services:
     servers:
       url: http://opi.srv.qiu.home:9091
     host: transmission.svc.qiu.home
+  - name: prometheus
+    servers:
+      url: http://satellite.srv.qiu.home:9090
+    host: prometheus.svc.qiu.home

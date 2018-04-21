@@ -1,0 +1,21 @@
+---
+- name: Prometheus | Make sure config folder exists
+  file:
+    path: /etc/prometheus
+    state: directory
+- name: Prometheus | Install configuration file
+  template:
+    src: prometheus.yml.j2
+    dest: /etc/prometheus/prometheus.yml
+- name: Prometheus | Run in container
+  docker_container:
+    name: prometheus
+    image: prom/prometheus:{{ prometheus_version }}
+    volumes:
+      - "/etc/prometheus:/etc/prometheus"
+    state: started
+    restart_policy: always
+    recreate: yes
+    published_ports:
+      - "9090:9090"
+    log_driver: journald
