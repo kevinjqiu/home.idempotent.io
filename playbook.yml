@@ -1,6 +1,8 @@
 ---
 - name: raspberrypi
   hosts: rpi
+  vars:
+    node_exporter_arch: armv6
   roles:
     - role: docker
       tags: ["docker"]
@@ -18,3 +20,6 @@
     - role: docker
       tags: ["docker"]
     - role: traefik
+    - role: node-exporter
+  vars:
+    node_exporter_arch: amd64
