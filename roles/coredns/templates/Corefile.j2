@@ -4,6 +4,7 @@
     }
 
     file /etc/coredns/zones/db.srv.qiu.home srv.qiu.home
+    file /etc/coredns/zones/db.qiu.home     qiu.home
     file /etc/coredns/zones/db.192.168      168.192.in-addr.arpa
 
     prometheus :{{ coredns_prometheus_port }}

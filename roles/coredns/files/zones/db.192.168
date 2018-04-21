@@ -14,9 +14,13 @@ $TTL    604800
 ; PTR records
 
 11.0      IN  PTR ns1.srv.qiu.home.
+11.0      IN  PTR idaeus.srv.qiu.home.
+11.0      IN  PTR dns1.srv.qiu.home.
+
 12.0      IN  PTR ns2.srv.qiu.home.
+12.0      IN  PTR nivalis.srv.qiu.home.
+12.0      IN  PTR dns2.srv.qiu.home.
+
 61.200    IN  PTR monarch.srv.qiu.home.
 46.200    IN  PTR satellite.srv.qiu.home.
-11.0      IN  PTR idaeus.srv.qiu.home.
-12.0      IN  PTR nivalis.srv.qiu.home.
 65.200    IN  PTR opi.srv.qiu.home.
