@@ -12,3 +12,9 @@
       tags: ["coredns", "dns"]
     - role: node-exporter
       tags: ["node-exporter"]
+- name: ingress
+  hosts: ingress
+  roles:
+    - role: docker
+      tags: ["docker"]
+    - role: traefik

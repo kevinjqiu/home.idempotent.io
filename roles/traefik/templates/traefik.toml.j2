@@ -1,0 +1,29 @@
+defaultEntryPoints = ["http"]
+logLevel = "INFO"
+[traefikLog]
+[accessLog]
+[entryPoints]
+  [http]
+  address = ":80"
+[api]
+  entryPoint = "traefik"
+  dashboard = true
+  debug = true
+[file]
+[backends]
+{% for service in services %}
+  [backends.{{ service.name }}]
+    [backends.{{ service.name }}.servers]
+      [backends.{{ service.name }}.servers.server0]
+        url = "{{ service.servers.url }}"
+{% endfor %}
+[frontends]
+{% for service in services %}
+  [frontends.{{ service.name }}]
+    entryPoints = ["http"]
+    backend = "{{ service.name }}"
+    passHostHeader = true
+  [frontends.{{ service.name }}.routes]
+    [frontends.{{ service.name }}.routes.route0]
+      rule = "Host: {{ service.host }}"
+{% endfor %}

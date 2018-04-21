@@ -1,0 +1,18 @@
+traefik_version: v1.5-alpine
+services:
+  - name: couchdb
+    servers:
+      url: http://monarch.srv.qiu.home:5984
+    host: couchdb.svc.qiu.home
+  - name: traefik-ui
+    servers:
+      url: http://monarch.srv.qiu.home:8080
+    host: traefik-ui.svc.qiu.home
+  - name: emby
+    servers:
+      url: http://monarch.srv.qiu.home:8096
+    host: emby.svc.qiu.home
+  - name: transmission
+    servers:
+      url: http://opi.srv.qiu.home:9091
+    host: transmission.svc.qiu.home
