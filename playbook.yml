@@ -25,8 +25,9 @@
 - name: monitoring
   hosts: monitoring
   roles:
-    - role: docker
-    - role: node-exporter
-    - role: prometheus
+    #- role: docker
+    #- role: node-exporter
+    #- role: prometheus
+    - role: grafana
   vars:
     node_exporter_arch: amd64

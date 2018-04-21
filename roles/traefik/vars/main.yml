@@ -20,3 +20,7 @@ services:
     servers:
       url: http://satellite.srv.qiu.home:9090
     host: prometheus.svc.qiu.home
+  - name: grafana
+    servers:
+      url: http://satellite.srv.qiu.home:3000
+    host: grafana.svc.qiu.home

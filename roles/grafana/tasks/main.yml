@@ -1,0 +1,11 @@
+---
+- name: Grafana | Run in container
+  docker_container:
+    name: grafana
+    image: grafana/grafana:{{ grafana_version }}
+    state: started
+    restart_policy: always
+    recreate: yes
+    published_ports:
+      - "3000:3000"
+    log_driver: journald
