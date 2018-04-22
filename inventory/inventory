@@ -2,6 +2,9 @@
 192.168.0.11
 192.168.0.12
 
+[opi]
+opi.srv.qiu.home
+
 [ingress]
 monarch.srv.qiu.home
 

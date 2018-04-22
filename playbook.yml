@@ -1,4 +1,10 @@
 ---
+- name: orangepi
+  hosts: opi
+  vars:
+    node_exporter_arch: armv7
+  roles:
+    - role: node-exporter
 - name: raspberrypi
   hosts: rpi
   vars:
