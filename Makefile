@@ -1,5 +1,5 @@
 rpi:
-	ansible-playbook -i inventory/inventory playbook.yml --ask-pass --user pi --become -v -t $(TAGS)
+	ansible-playbook -i inventory/inventory playbook.yml --ask-pass --user pi --become -v -t $(TAGS) -l rpi
 
 
 ingress:

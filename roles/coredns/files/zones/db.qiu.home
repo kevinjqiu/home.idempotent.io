@@ -13,6 +13,8 @@ $TTL    604800
 
 ; name servers - A records
 ns1.qiu.home.    IN    A    192.168.0.11
+dns1.qiu.home.   IN    A    192.168.0.11
 ns2.qiu.home.    IN    A    192.168.0.12
+dns2.qiu.home.   IN    A    192.168.0.12
 svc.qiu.home.    IN    A    192.168.200.61
 *.svc.qiu.home.  IN    A    192.168.200.61

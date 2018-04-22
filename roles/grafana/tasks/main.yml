@@ -1,4 +1,9 @@
 ---
+- name: Grafana | Make sure data folder exists
+  file:
+    path: /var/lib/grafana
+    state: directory
+    mode: 0777
 - name: Grafana | Run in container
   docker_container:
     name: grafana
@@ -9,5 +14,6 @@
     published_ports:
       - "3000:3000"
     volumes:
-      - "/var/lib/grafana"
+      - "/var/lib/grafana:/var/lib/grafana"
     log_driver: journald
+  become: yes

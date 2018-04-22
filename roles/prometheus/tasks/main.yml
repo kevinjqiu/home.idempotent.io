@@ -1,4 +1,9 @@
 ---
+- name: Prometheus | Make sure data folder exists
+  file:
+    path: /var/lib/prometheus
+    state: directory
+    mode: 0777
 - name: Prometheus | Make sure config folder exists
   file:
     path: /etc/prometheus
@@ -13,10 +18,11 @@
     image: prom/prometheus:{{ prometheus_version }}
     volumes:
       - "/etc/prometheus:/etc/prometheus"
-      - "/prometheus"
+      - "/var/lib/prometheus:/prometheus"
     state: started
     restart_policy: always
     recreate: yes
     published_ports:
       - "9090:9090"
     log_driver: journald
+  become: yes

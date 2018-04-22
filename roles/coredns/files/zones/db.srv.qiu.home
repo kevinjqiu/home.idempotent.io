@@ -19,5 +19,7 @@ ns2.srv.qiu.home.    IN    A    192.168.0.12
 monarch.srv.qiu.home.    IN    A    192.168.200.61
 satellite.srv.qiu.home.  IN    A    192.168.200.46
 idaeus.srv.qiu.home.     IN    A    192.168.0.11
+dns1.srv.qiu.home.       IN    A    192.168.0.11
 nivalis.srv.qiu.home.    IN    A    192.168.0.12
+dns2.srv.qiu.home.       IN    A    192.168.0.12
 opi.srv.qiu.home.        IN    A    192.168.200.65

@@ -4,12 +4,12 @@ scrape_jobs:
     targets:
       - satellite.srv.qiu.home:9100
       - monarch.srv.qiu.home:9100
-      - nivalis.srv.qiu.home:9100
-      - idaeus.srv.qiu.home:9100
+      - dns1.qiu.home:9100
+      - dns2.qiu.home:9100
       - opi.srv.qiu.home:9100
     labels: []
   - name: coredns
     targets:
-      - nivalis.srv.qiu.home:9153
-      - idaeus.srv.qiu.home:9153
+      - dns1.qiu.home:9153
+      - dns2.qiu.home:9153
     labels: []
