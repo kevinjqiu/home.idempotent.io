@@ -8,3 +8,8 @@ scrape_jobs:
       - idaeus.srv.qiu.home:9100
       - opi.srv.qiu.home:9100
     labels: []
+  - name: coredns
+    targets:
+      - nivalis.srv.qiu.home:9153
+      - idaeus.srv.qiu.home:9153
+    labels: []

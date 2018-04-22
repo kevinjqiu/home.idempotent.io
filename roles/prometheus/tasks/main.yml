@@ -13,6 +13,7 @@
     image: prom/prometheus:{{ prometheus_version }}
     volumes:
       - "/etc/prometheus:/etc/prometheus"
+      - "/prometheus"
     state: started
     restart_policy: always
     recreate: yes
