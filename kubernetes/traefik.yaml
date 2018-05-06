@@ -1,0 +1,18 @@
+imageTag: 1.5.4
+serviceType: NodePort
+replicas: 2
+rbac:
+  enabled: true
+debug:
+  enabled: true
+dashboard:
+  enabled: true
+  domain: traefik.svc.qiu.home
+service:
+  nodePorts:
+    http: 30099
+accessLogs:
+  enabled: true
+deployment:
+  hostPort:
+    httpEnabled: true
