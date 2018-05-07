@@ -23,3 +23,11 @@ prometheus:
 rm-prometheus:
 	helm delete --purge kube-prometheus
 	helm delete --purge prometheus-operator
+
+couchdb:
+	helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
+	helm repo update
+	helm upgrade --install florinapp-couchdb -f couchdb.yaml incubator/couchdb
+
+rm-couchdb:
+	helm delete --purge florinapp-couchdb

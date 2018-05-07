@@ -1,0 +1,13 @@
+clusterSize: 1
+persistentVolume:
+  enabled: true
+  size: 500Mi
+  storageClass: rook-block
+adminUsername: admin
+adminPassword: password
+image:
+  tag: 2.1.1
+ingress:
+  enabled: true
+  hosts:
+    - florinapp-couchdb.svc.qiu.home
