@@ -1,3 +1,0 @@
-image:
-  tag: master
-  pullPolicy: Always

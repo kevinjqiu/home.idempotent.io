@@ -1,0 +1,23 @@
+deployAlertManager: false
+prometheus:
+  image:
+    tag: v2.2.1
+  ingress:
+    enabled: true
+    hosts:
+      - prometheus.svc.qiu.home
+  retention: 8544h
+  storageSpec:
+    volumeClaimTemplate:
+      spec:
+        storageClassName: rook-block
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 50Gi
+grafana:
+  ingress:
+    enabled: true
+    hosts:
+      - grafana.svc.qiu.home
