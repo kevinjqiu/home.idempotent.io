@@ -1,5 +1,6 @@
 PROMETHEUS_OPERATOR_REPO=/home/kevin/src/gopath/src/github.com/coreos/prometheus-operator/helm/prometheus-operator
 KUBE_PROMETHEUS_REPO=/home/kevin/src/gopath/src/github.com/coreos/prometheus-operator/helm/kube-prometheus
+COUCHDB_REPO=/home/kevin/src/charts/incubator/couchdb
 
 .PHONY: tfk rook rm-rook
 tfk:
@@ -27,7 +28,7 @@ rm-prometheus:
 couchdb:
 	helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
 	helm repo update
-	helm upgrade --install florinapp-couchdb -f couchdb.yaml incubator/couchdb
+	helm upgrade --install florinapp-couchdb -f couchdb.yaml $(COUCHDB_REPO)
 
 rm-couchdb:
 	helm delete --purge florinapp-couchdb
