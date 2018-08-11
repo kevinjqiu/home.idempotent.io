@@ -1,0 +1,9 @@
+---
+- name: Vault | Run in container
+  docker_container:
+      name: vault
+      image: vault:{{ vault_version }}
+      state: started
+      log_driver: journald
+      log_options:
+          tag: vault

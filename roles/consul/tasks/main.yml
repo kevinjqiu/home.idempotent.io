@@ -5,3 +5,5 @@
       image: consul:{{ consul_version }}
       state: started
       log_driver: journald
+      log_options:
+          tag: consul

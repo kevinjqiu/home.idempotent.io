@@ -12,3 +12,6 @@ monitoring:
 
 consul:
 	ansible-playbook -i inventory/inventory playbook.yml --ask-become-pass --user kevin --become -v -l consul
+
+vault:
+	ansible-playbook -i inventory/inventory playbook.yml --ask-become-pass --user kevin --become -v -l vault
