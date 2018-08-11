@@ -7,3 +7,5 @@
       log_driver: journald
       log_options:
           tag: vault
+      ports:
+          - "8200:8200"
