@@ -37,3 +37,7 @@
     - role: grafana
   vars:
     node_exporter_arch: amd64
+- name: consul
+  hosts: consul
+  roles:
+    - role: consul

@@ -10,3 +10,6 @@ monarch.srv.qiu.home
 
 [monitoring]
 satellite.srv.qiu.home
+
+[consul]
+monarch.srv.qiu.home

@@ -1,0 +1,7 @@
+---
+- name: Consul | Run in container
+  docker_container:
+      name: consul
+      image: consul:{{ consul_version }}
+      state: started
+      log_driver: journald
