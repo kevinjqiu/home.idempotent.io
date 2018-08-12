@@ -1,11 +1,25 @@
 ---
+- name: Vault | Ensure vault config directory exists
+  file: path={{ vault_config_dir }} state=directory
+- name: Vault | Copy config file
+  copy:
+      src: config.hcl
+      dest: "{{ vault_config_dir }}/config.hcl"
+      mode: 0644
 - name: Vault | Run in container
   docker_container:
       name: vault
       image: vault:{{ vault_version }}
+      command:
+          - server
       state: started
+      restart: yes
       log_driver: journald
       log_options:
           tag: vault
       ports:
           - "8200:8200"
+      volumes:
+          - "{{ vault_config_dir }}:/vault/config"
+      capabilities:
+          - IPC_LOCK

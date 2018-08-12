@@ -1,1 +1,2 @@
 vault_version: "0.10.4"
+vault_config_dir: "/etc/vault"

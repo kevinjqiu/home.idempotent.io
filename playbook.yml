@@ -41,7 +41,9 @@
   hosts: consul
   roles:
     - role: consul
+      tags: ["consul"]
 - name: vault
   hosts: vault
   roles:
     - role: vault
+      tags: ["vault"]
