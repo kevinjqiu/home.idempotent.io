@@ -18,11 +18,11 @@ services:
     host: transmission.svc.qiu.home
   - name: prometheus
     servers:
-      url: http://satellite.srv.qiu.home:9090
+      url: http://monarch.srv.qiu.home:9090
     host: prometheus.svc.qiu.home
   - name: grafana
     servers:
-      url: http://satellite.srv.qiu.home:3000
+      url: http://monarch.srv.qiu.home:3000
     host: grafana.svc.qiu.home
   - name: vault
     servers:

@@ -9,7 +9,8 @@ opi.srv.qiu.home
 monarch.srv.qiu.home
 
 [monitoring]
-satellite.srv.qiu.home
+monarch.srv.qiu.home
+#satellite.srv.qiu.home
 
 [consul]
 monarch.srv.qiu.home
