@@ -35,11 +35,11 @@
   roles:
     - role: docker
     - role: node-exporter
-      tags: ["ingress"]
+      tags: ["monitoring"]
     - role: prometheus
-      tags: ["ingress"]
+      tags: ["monitoring"]
     - role: grafana
-      tags: ["ingress"]
+      tags: ["monitoring"]
   vars:
     node_exporter_arch: amd64
 - name: consul
@@ -47,6 +47,11 @@
   roles:
     - role: consul
       tags: ["consul"]
+- name: hass
+  hosts: hass
+  roles:
+    - role: hass
+      tags: ["hass"]
 #- name: vault
 #  hosts: vault
 #  roles:

@@ -1,0 +1,19 @@
+---
+- name: HomeAssistant | Make sure config folder exists
+  file:
+    path: /etc/hass
+    state: directory
+    mode: 0777
+- name: HomeAssistant | Run in container
+  docker_container:
+    name: hass
+    image: homeassistant/home-assistant
+    state: started
+    restart_policy: always
+    recreate: yes
+    published_ports:
+      - "8123:8123"
+    log_driver: journald
+    volumes:
+      - "/etc/hass:/config"
+  bcome: yes

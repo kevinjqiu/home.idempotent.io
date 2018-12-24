@@ -28,3 +28,7 @@ services:
     servers:
       url: http://monarch.srv.qiu.home:8200
     host: vault.svc.qiu.home
+  - name: hass
+    servers:
+      url: http://monarch.srv.qiu.home:8123
+    host: hass.svc.qiu.home
