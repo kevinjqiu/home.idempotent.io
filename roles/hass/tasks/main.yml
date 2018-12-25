@@ -16,4 +16,4 @@
     log_driver: journald
     volumes:
       - "/etc/hass:/config"
-  bcome: yes
+  become: yes
