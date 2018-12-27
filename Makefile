@@ -15,3 +15,6 @@ consul:
 
 vault:
 	ansible-playbook -i inventory/inventory playbook.yml --ask-become-pass --user kevin --become -v -l vault --tags vault
+
+hass:
+	ansible-playbook -i inventory/inventory playbook.yml --ask-become-pass --user kevin --become -v -l hass --tags hass
