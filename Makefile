@@ -24,3 +24,6 @@ hass:
 
 gogs:
 	make .run-playbook playbook=gogs
+
+nextcloud:
+	make .run-playbook playbook=nextcloud

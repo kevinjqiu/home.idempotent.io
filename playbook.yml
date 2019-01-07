@@ -62,3 +62,8 @@
 #  roles:
 #    - role: vault
 #      tags: ["vault"]
+- name: nextcloud
+  hosts: nextcloud
+  roles:
+    - role: nextcloud
+      tags: ["nextcloud"]

@@ -32,3 +32,7 @@ services:
     servers:
       url: http://monarch.srv.qiu.home:8123
     host: hass.svc.qiu.home
+  - name: nextcloud
+    servers:
+      url: http://monarch.srv.qiu.home:60080
+    host: nextcloud.svc.qiu.home

@@ -1,0 +1,19 @@
+---
+- name: NextCloud | Make sure data folders exist
+  file:
+    path: "{{ nextcloud_data_dir }}"
+    state: directory
+    mode: 0777
+- name: NextCloud | Run in container
+  docker_container:
+    name: nextcloud
+    image: nextcloud
+    state: started
+    restart_policy: always
+    recreate: yes
+    published_ports:
+     - "60080:80"
+    log_driver: journald
+    volumes:
+      - "{{ nextcloud_data_dir }}:/var/www/html"
+  become: yes
