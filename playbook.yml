@@ -52,6 +52,11 @@
   roles:
     - role: hass
       tags: ["hass"]
+- name: gogs
+  hosts: gogs
+  roles:
+    - role: gogs
+      tags: ["gogs"]
 #- name: vault
 #  hosts: vault
 #  roles:

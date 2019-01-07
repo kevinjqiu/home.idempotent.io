@@ -1,3 +1,6 @@
+.run-playbook:
+	ansible-playbook -i inventory/inventory playbook.yml --ask-become-pass --user kevin --become -v -l $(playbook) --tags $(playbook)
+
 opi:
 	ansible-playbook -i inventory/inventory playbook.yml --ask-become-pass --user kevin --become -v -l opi
 
@@ -18,3 +21,6 @@ vault:
 
 hass:
 	ansible-playbook -i inventory/inventory playbook.yml --ask-become-pass --user kevin --become -v -l hass --tags hass
+
+gogs:
+	make .run-playbook playbook=gogs

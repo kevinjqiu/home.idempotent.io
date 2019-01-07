@@ -1,0 +1,19 @@
+---
+- name: Gogs | Make sure data folder exists
+  file:
+    path: /var/gogs
+    state: directory
+    mode: 0777
+- name: Gogs | Run in container
+  docker_container:
+    name: gogs
+    image: gogs/gogs
+    state: started
+    restart_policy: always
+    recreate: yes
+    published_ports:
+      - "10022:22"
+      - "10080:3000"
+    volumes:
+      - "/var/gogs:/data"
+  become: yes
