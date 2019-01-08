@@ -7,13 +7,25 @@
 - name: NextCloud | Run in container
   docker_container:
     name: nextcloud
-    image: nextcloud
+    image: nextcloud:fpm-alpine
     state: started
     restart_policy: always
     recreate: yes
-    published_ports:
-     - "60080:80"
     log_driver: journald
     volumes:
       - "{{ nextcloud_data_dir }}:/var/www/html"
   become: yes
+- name: NextCloud | Run proxy container
+  docker_container:
+    name: nextcloud-proxy
+    image: kevinjqiu/nextcloud-proxy
+    state: started
+    restart_policy: always
+    recreate: yes
+    published_ports:
+      - "60080:80"
+    log_driver: journald
+    volumes:
+      - "{{ nextcloud_data_dir }}:/var/www/html:ro"
+    links:
+      - "nextcloud:app"
