@@ -25,4 +25,7 @@ nextcloud:
 	make .run playbook=nextcloud.yml
 
 dns:
-	make .run playbook=dns.yml user=pi
+	make .run playbook=dns.yml
+
+bootstrap:
+	make .run playbook=bootstrap.yml user=pi

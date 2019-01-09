@@ -1,0 +1,6 @@
+---
+- name: Add my user
+  user:
+    name: "{{ username }}"
+    groups: adm
+    password: "{{ password }}"

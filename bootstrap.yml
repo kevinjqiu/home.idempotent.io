@@ -1,0 +1,6 @@
+---
+- name: users
+  hosts:
+    - rpi
+  roles:
+    - users
