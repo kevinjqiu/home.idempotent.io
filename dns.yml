@@ -1,11 +1,5 @@
 - name: dns
   hosts: dns
   roles:
-    - role: docker
-      tags: ["docker"]
-    - role: pihole
-      tags: ["dns"]
-    - role: coredns
-      tags: ["coredns", "dns"]
-    - role: node-exporter
-      tags: ["node-exporter"]
+    - pihole
+    - coredns
