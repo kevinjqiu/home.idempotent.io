@@ -1,0 +1,12 @@
+#- name: monitoring
+#  hosts: monitoring
+#  roles:
+#    - docker
+#    - prometheus
+#    - grafana
+#  vars:
+#    node_exporter_arch: amd64
+- name: node-exporter
+  hosts: all
+  roles:
+    - node-exporter

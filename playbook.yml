@@ -20,50 +20,8 @@
       tags: ["coredns", "dns"]
     - role: node-exporter
       tags: ["node-exporter"]
-- name: ingress
-  hosts: ingress
-  roles:
-    - role: docker
-    - role: traefik
-      tags: ["ingress"]
-    - role: node-exporter
-      tags: ["ingress"]
-  vars:
-    node_exporter_arch: amd64
-- name: monitoring
-  hosts: monitoring
-  roles:
-    - role: docker
-    - role: node-exporter
-      tags: ["monitoring"]
-    - role: prometheus
-      tags: ["monitoring"]
-    - role: grafana
-      tags: ["monitoring"]
-  vars:
-    node_exporter_arch: amd64
 - name: consul
   hosts: consul
   roles:
     - role: consul
       tags: ["consul"]
-- name: hass
-  hosts: hass
-  roles:
-    - role: hass
-      tags: ["hass"]
-- name: gogs
-  hosts: gogs
-  roles:
-    - role: gogs
-      tags: ["gogs"]
-#- name: vault
-#  hosts: vault
-#  roles:
-#    - role: vault
-#      tags: ["vault"]
-- name: nextcloud
-  hosts: nextcloud
-  roles:
-    - role: nextcloud
-      tags: ["nextcloud"]

@@ -1,29 +1,28 @@
-.run-playbook:
-	ansible-playbook -i inventory/inventory playbook.yml --ask-become-pass --user kevin --become -v -l $(playbook) --tags $(playbook)
+user ?= kevin
 
-opi:
-	ansible-playbook -i inventory/inventory playbook.yml --ask-become-pass --user kevin --become -v -l opi
-
-rpi:
-	ansible-playbook -i inventory/inventory playbook.yml --ask-pass --user pi --become -v -t $(TAGS) -l rpi
+.run:
+	ansible-playbook -i inventory/inventory $(playbook) --ask-become-pass --user $(user) --become -v
 
 ingress:
-	ansible-playbook -i inventory/inventory playbook.yml --ask-become-pass --user kevin --become -v -l ingress --tags ingress
+	make .run playbook=ingress.yml
 
 monitoring:
-	ansible-playbook -i inventory/inventory playbook.yml --ask-become-pass --user kevin --become -v -l monitoring --tags monitoring
+	make .run playbook=monitoring.yml
 
 consul:
-	ansible-playbook -i inventory/inventory playbook.yml --ask-become-pass --user kevin --become -v -l consul --tags consul
+	make .run playbook=consul.yml
 
 vault:
-	ansible-playbook -i inventory/inventory playbook.yml --ask-become-pass --user kevin --become -v -l vault --tags vault
+	make .run playbook=vault.yml
 
 hass:
-	ansible-playbook -i inventory/inventory playbook.yml --ask-become-pass --user kevin --become -v -l hass --tags hass
+	make .run playbook=hass.yml
 
 gogs:
-	make .run-playbook playbook=gogs
+	make .run playbook=gogs.yml
 
 nextcloud:
-	make .run-playbook playbook=nextcloud
+	make .run playbook=nextcloud.yml
+
+dns:
+	make .run playbook=dns.yml user=pi

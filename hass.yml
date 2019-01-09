@@ -1,0 +1,4 @@
+- name: hass
+  hosts: hass
+  roles:
+    - hass

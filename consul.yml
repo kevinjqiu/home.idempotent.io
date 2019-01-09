@@ -1,0 +1,4 @@
+- name: consul
+  hosts: consul
+  roles:
+    - consul

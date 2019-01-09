@@ -1,0 +1,4 @@
+- name: gogs
+  hosts: gogs
+  roles:
+    - gogs

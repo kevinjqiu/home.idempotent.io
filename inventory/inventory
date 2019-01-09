@@ -1,28 +1,44 @@
+[all:children]
+rpi
+opi
+ingress
+monitoring
+consul
+vault
+hass
+gogs
+nextcloud
+
+[monarch]
+monarch.srv.qiu.home node_exporter_arch=amd64
+
 [rpi]
-192.168.0.11
-192.168.0.12
+192.168.0.11 node_exporter_arch=armv6
+192.168.0.12 node_exporter_arch=armv6
 
 [opi]
-opi.srv.qiu.home
+opi.srv.qiu.home node_exporter_arch=armv7
 
-[ingress]
-monarch.srv.qiu.home
+[dns:children]
+rpi
 
-[monitoring]
-monarch.srv.qiu.home
-#satellite.srv.qiu.home
+[ingress:children]
+monarch
 
-[consul]
-monarch.srv.qiu.home
+[monitoring:children]
+monarch
 
-[vault]
-monarch.srv.qiu.home
+[consul:children]
+monarch
 
-[hass]
-monarch.srv.qiu.home
+[vault:children]
+monarch
 
-[gogs]
-monarch.srv.qiu.home
+[hass:children]
+monarch
 
-[nextcloud]
-monarch.srv.qiu.home
+[gogs:children]
+monarch
+
+[nextcloud:children]
+monarch

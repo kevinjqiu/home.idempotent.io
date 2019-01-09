@@ -1,0 +1,8 @@
+- name: ingress
+  hosts: ingress
+  roles:
+    - docker
+    - traefik
+    - node-exporter
+  vars:
+    node_exporter_arch: amd64
