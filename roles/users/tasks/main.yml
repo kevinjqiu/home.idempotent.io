@@ -2,5 +2,5 @@
 - name: Add my user
   user:
     name: "{{ username }}"
-    groups: adm
+    groups: adm,sudo
     password: "{{ password }}"
